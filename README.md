@@ -4,7 +4,7 @@ Source code of the _"Programs as Values: The foundations of next-gen concurrent 
 
 ## Links
 
-+ **Slides**: https://perficient-my.sharepoint.com/:p:/p/luis_mejias/EUqvic_6kUJCr8q0ogTRjp8BCBROZstVkaosgd1WlEIPjA
++ **Slides**: https://www.dropbox.com/s/f1ry3kiau3hk0nb/Programs%20as%20Values%20%28Lambda%29.pptx?dl=0
 + **Talk recording** _(in Spanish)_: https://www.youtube.com/watch?v=iJ5jmMeAZwE&t=5652s&ab_channel=Josekell
 + **Programs as Values series** _(Fabio Labella)_: https://systemfw.org/archive.html
 + **The case for effect systems** _(Daniel Spiewak)_: https://www.youtube.com/watch?v=qgfCmQ-2tW0
