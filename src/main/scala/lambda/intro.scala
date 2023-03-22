@@ -1,5 +1,13 @@
 package lambda
 
+object Program {
+  private final case class Continue[+A](value: A) extends Program[A]
+  private final case object Halt extends Program[Nothing]
+
+  def continue[A](value: A): Program[A] = Continue(value)
+  def halt: Program[Nothing] = Halt
+}
+
 sealed trait Program[+A] {
   import Program.{Continue, Halt}
 
@@ -29,14 +37,6 @@ sealed trait Program[+A] {
   }
 }
 
-object Program {
-  private final case class Continue[+A](value: A) extends Program[A]
-  private final case object Halt extends Program[Nothing]
-
-  def continue[A](value: A): Program[A] = Continue(value)
-  def halt: Program[Nothing] = Halt
-}
-
 object Example {
   def num(n: Int): Program[Int] =
     Program.continue(n)
@@ -53,12 +53,15 @@ object Example {
 
   def main(args: Array[String]): Unit = {
     // ((x / y) / z) * 2
-    def equation(x: Int, y: Int, z: Int): Int =
+    def equation(x: Int, y: Int, z: Int): Program[Int] =
       duplicate(divide(
         divide(num(x), num(y)),
         num(z)
-      )).resultOr(-1)
+      ))
 
-    println(s"The result is: ${equation(100, 10, 5)}")
+    def run(x: Int, y: Int, z: Int): Int =
+      equation(x, y, z).resultOr(-1)
+
+    println(s"The result is: ${run(100, 10, 5)}")
   }
 }
