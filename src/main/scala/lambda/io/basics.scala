@@ -25,7 +25,7 @@ object Basics1_2 extends IOApp.Simple {
 
 
 /** Program 2: Async & Cancellable operations. */
-object Basics2 extends IOApp.Simple {
+object Basics2_1 extends IOApp.Simple {
   val tick: IO[Unit] =
     (IO.sleep(1.second) >> IO.println("Tick")).foreverM
 
@@ -36,6 +36,17 @@ object Basics2 extends IOApp.Simple {
     tick.start.flatMap { tickFiber =>
       cancelToken >> tickFiber.cancel
     }
+}
+
+object Basics2_2 extends IOApp.Simple {
+  val tick: IO[Unit] =
+    (IO.sleep(1.second) >> IO.println("Tick")).foreverM
+
+  val cancelToken: IO[Unit] =
+    IO.readLine.void
+
+  override final val run: IO[Unit] =
+    tick.background.surround(cancelToken)
 }
 // ----------------------------------------------
 
@@ -76,7 +87,7 @@ object Basics4 extends IOApp.Simple {
 
   def process(lines: List[String]): List[Double] =
     lines.filter { line =>
-      !line.trim.isEmpty && !line.startsWith("//")
+      !line.isBlank && !line.startsWith("//")
     } map { line =>
       fahrenheitToCelsius(f = line.toDouble)
     }
