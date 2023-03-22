@@ -50,9 +50,9 @@ object Basics2 extends IOApp.Simple {
     final val instance: Resource[IO, DBService] =
       Resource.make(
         IO.println("Connecting to the database").as(new DBService)
-      )(_ =>
+      ) { _ =>
         IO.println("Closing the database connection")
-      )
+      }
   }
 
   override final val run: IO[Unit] =
@@ -67,7 +67,7 @@ object Basics2 extends IOApp.Simple {
 
 /** Program 3: Error handling. */
 object Basics3 extends IOApp.Simple {
-  final case object Failure extends Throwable("Faliure")
+  final case object Failure extends Throwable("Failure")
 
   override final val run: IO[Unit] =
     Stream(1, 2, 3).evalMap {
