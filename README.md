@@ -4,14 +4,23 @@ Source code of the _"Programs as Values: The foundations of next-gen concurrent 
 
 ## Links
 
-+ **Slides**: https://www.dropbox.com/s/f1ry3kiau3hk0nb/Programs%20as%20Values%20%28Lambda%29.pptx?dl=0
+### Talk
+
++ **Slides**: https://docs.google.com/presentation/d/1ePRL5sYzEE7XadIkhUQpVmJb8Wix96W8AYBQjFcgVq0/edit?usp=sharing
 + **Talk recording** _(in Spanish)_: https://www.youtube.com/watch?v=iJ5jmMeAZwE&t=5652s&ab_channel=Josekell
+
+### General
+
 + **Programs as Values series** _(Fabio Labella)_: https://systemfw.org/archive.html
-+ **The case for effect systems** _(Daniel Spiewak)_: https://www.youtube.com/watch?v=qgfCmQ-2tW0
-+ **Streams - Your New Favorite Primitive** _(Ryan Peters)_: https://www.youtube.com/watch?v=BZ8O6T7Y1UE
 + **Functional Programming with Effects** _(Rob Norris)_: https://www.youtube.com/watch?v=30q6BkBv5MY&ab_channel=ScalaDaysConferences
++ **The case for effect systems** _(Daniel Spiewak)_: https://www.youtube.com/watch?v=qgfCmQ-2tW0
 + **What is an Effect?** _(Adam Rosien)_: https://www.inner-product.com/posts/what-is-an-effect/
 + **Why FP** _(Luis Miguel Mejía Suárez)_: https://gist.github.com/BalmungSan/bdb163a080af54d3713e9e7c4a37ff51
+
+### Scala _(typelevel)_ specific
+
++ **Intro to cats-effect** _(Gavin Bisesi)_: https://github.com/Daenyth/intro-cats-effect
++ **Streams - Your New Favorite Primitive** _(Ryan Peters)_: https://www.youtube.com/watch?v=BZ8O6T7Y1UE
 
 ## Extras
 
