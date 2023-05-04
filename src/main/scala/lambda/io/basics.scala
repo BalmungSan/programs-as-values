@@ -63,7 +63,7 @@ object Basics3_1 extends IOApp.Simple {
     IO.sleep(1.second) >> IO.println("Running ioC").as(true)
 
   override final val run: IO[Unit] =
-    (ioA, ioB, ioC).parTupled.flatMap {
+    (ioA, ioB, ioC).parFlatMapN {
       case (a, b, c) =>
         IO.println(s"a: ${a} | b: ${b} | c: ${c}")
     }
