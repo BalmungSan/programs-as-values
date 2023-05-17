@@ -57,10 +57,10 @@ object Basics2 extends IOApp.Simple {
 
   override final val run: IO[Unit] =
     Stream.resource(DBService.instance).flatMap { db =>
-      Stream.eval(IO.println("Before query the db")) ++
-      db.streamAllData.evalMap(IO.println) ++
-      Stream.eval(IO.println("After query the db"))
-    }.compile.drain
+      Stream.exec(IO.println("Before query the db")) ++
+      db.streamAllData.evalTap(IO.println) ++
+      Stream.exec(IO.println("After query the db"))
+    }.compile.toList.flatMap(IO.println)
 }
 // ----------------------------------------------
 

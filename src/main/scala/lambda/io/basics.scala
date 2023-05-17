@@ -51,7 +51,7 @@ object Basics2_2 extends IOApp.Simple {
 // ----------------------------------------------
 
 
-/** Program 3: Parallel operations. */
+/** Program 3: Concurrent operations. */
 object Basics3_1 extends IOApp.Simple {
   val ioA: IO[Int] =
     IO.sleep(1.second) >> IO.println("Running ioA").as(1)
@@ -94,8 +94,8 @@ object Basics4 extends IOApp.Simple {
 
   override final val run: IO[Unit] =
     Resource
-      .fromAutoCloseable(IO(Source.fromFile("fahrenheit.txt")))
-      .use(file => IO(file.getLines().toList))
+      .fromAutoCloseable(IO.blocking(Source.fromFile("fahrenheit.txt")))
+      .use(file => IO.blocking(file.getLines().toList))
       .map(process)
       .attempt
       .flatMap {
