@@ -8,7 +8,7 @@ Source code of the _"Programs as Values: The foundations of next-gen concurrent 
 
 + **Slides**: https://www.dropbox.com/scl/fi/5m3ufro9fhmkhtq26q498/Programs-as-Values.pptx?rlkey=mmsb8stjbd7ienslhff37pb1e&dl=0
 + **Talk recording**
-  * _Spanish_: https://www.youtube.com/watch?v=iJ5jmMeAZwE&t=5652s&ab_channel=Josekell
+  * _Spanish_: https://www.youtube.com/watch?v=iJ5jmMeAZwE
   * _English_: https://vimeo.com/855270729/af156d93a7
 
 ### General
