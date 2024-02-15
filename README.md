@@ -9,7 +9,7 @@ Source code of the _"Programs as Values: The foundations of next-gen concurrent 
 + **Slides**: https://xebiagroup-my.sharepoint.com/:p:/g/personal/luis_mejia_xebia_com/EZKUFTggjN9Hh1gl8W_TC5QBZysDQfL-aYc7dKH0idLJGA?e=U6YdDS
 + **Talk recording**
   * _Spanish_: https://www.youtube.com/watch?v=iJ5jmMeAZwE&t=5652s&ab_channel=Josekell
-  * _English_: https://vimeo.com/855270729
+  * _English_: https://vimeo.com/855270729/af156d93a7
 
 ### General
 
