@@ -2,8 +2,8 @@ package lambda.io.priority
 
 import cats.effect.{IO, IOApp}
 import cats.effect.std.{Queue, Semaphore}
-import cats.syntax.all._
-import scala.concurrent.duration._
+import cats.syntax.all.*
+import scala.concurrent.duration.given // Provides duration units.
 
 object Main extends IOApp.Simple {
   private def createJob(id: Int, highPriority: Boolean = true): IO[Unit] =

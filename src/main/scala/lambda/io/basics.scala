@@ -1,8 +1,8 @@
 package lambda.io
 
 import cats.effect.{IO, IOApp, Resource}
-import cats.syntax.all._
-import scala.concurrent.duration._ // Provides duration units.
+import cats.syntax.all.*
+import scala.concurrent.duration.given // Provides duration units.
 import scala.io.Source
 
 /** Program 1: Sequential composition. */
@@ -73,7 +73,7 @@ object Basics3_2 extends IOApp.Simple {
   override final val run: IO[Unit] =
     List.range(start = 0, end = 11).parTraverse { i =>
       IO.sleep(1.second) >> IO.println(i) >> IO.delay((i * 10) + 5)
-    } flatMap { data =>
+    }.flatMap { data =>
       IO.println(s"Final data: ${data}")
     }
 }
@@ -88,7 +88,7 @@ object Basics4 extends IOApp.Simple {
   def process(lines: List[String]): List[Double] =
     lines.filter { line =>
       !line.isBlank && !line.startsWith("//")
-    } map { line =>
+    }.map { line =>
       fahrenheitToCelsius(f = line.toDouble)
     }
 

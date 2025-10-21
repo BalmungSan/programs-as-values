@@ -2,7 +2,7 @@ package lambda
 
 object Program {
   private final case class Continue[+A](value: A) extends Program[A]
-  private final case object Halt extends Program[Nothing]
+  private case object Halt extends Program[Nothing]
 
   def continue[A](value: A): Program[A] = Continue(value)
   def halt: Program[Nothing] = Halt

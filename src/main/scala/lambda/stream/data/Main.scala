@@ -1,7 +1,7 @@
 package lambda.stream.data
 
 import cats.effect.{IO, IOApp}
-import cats.syntax.all._
+import cats.syntax.all.*
 import fs2.io.file.{Files, Path}
 
 object Main extends IOApp.Simple {

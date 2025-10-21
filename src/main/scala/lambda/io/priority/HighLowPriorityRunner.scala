@@ -2,7 +2,7 @@ package lambda.io.priority
 
 import cats.effect.IO
 import cats.effect.std.{Queue, Semaphore, Supervisor}
-import scala.concurrent.duration._
+import scala.concurrent.duration.given // Provides duration units.
 
 object HighLowPriorityRunner {
   final case class Config(

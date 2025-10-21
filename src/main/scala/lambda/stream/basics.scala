@@ -3,7 +3,7 @@ package lambda.stream
 import cats.effect.{IO, IOApp, Ref, Resource}
 import cats.effect.std.Random
 import fs2.Stream
-import scala.concurrent.duration._
+import scala.concurrent.duration.given // Provides duration units.
 
 /** Program 1: Infinite data. */
 object Basics1_1 extends IOApp.Simple {
@@ -46,6 +46,7 @@ object Basics2 extends IOApp.Simple {
     val streamAllData: Stream[IO, Int] =
       Stream.range(start = 0, stopExclusive = 21, step = 2)
   }
+
   object DBService {
     final val instance: Resource[IO, DBService] =
       Resource.make(
@@ -67,7 +68,7 @@ object Basics2 extends IOApp.Simple {
 
 /** Program 3: Error handling. */
 object Basics3 extends IOApp.Simple {
-  final case object Failure extends Throwable("Failure")
+  case object Failure extends Throwable("Failure")
 
   override final val run: IO[Unit] =
     Stream(1, 2, 3).evalMap {
